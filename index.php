@@ -9,10 +9,9 @@
 	<meta name="author" content="Samui Productions">
 	<meta name="keywords" content="music production, beats, mixing, mastering, music studio, portfolio, soundcloud, spotify, apple music, youtube, contact,social media, collaborations, projects, genre, tracks, artist, bio, testimonials, store, events">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="img/icons/logo.png" />
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/owl.carousel.css">
-	<link rel="icon" type="image/png" href="img/icons/logo.png" />
 	<link rel="stylesheet" href="css/slit-slider.css">
 	<link rel="stylesheet" href="css/main.css">
 	<script src="js/modernizr-2.6.2.min.js"></script>
@@ -31,7 +30,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				<div class="header-brand">
-					<img src="img/icons/logo.png" alt="logo" width="30" height="30"/>
+					<img src="img/icons/logo.png" alt="logo" width="30" height="30" />
 					<h1 class="navbar-brand">Samui Productions</h1>
 				</div>
 			</div>
@@ -44,25 +43,18 @@
 			</nav>
 		</div>
 	</header>
-	<?php 
-		function shuffle_assoc($list) { 
-			$keys = array_keys($list); 
-			shuffle($keys); 
-			$random = [];
-			foreach ($keys as $key) $random[$key] = $list[$key];
-			return $random; 
-		}
+	<?php
 		$socials = json_decode(file_get_contents("socials.json"), true);
-		$order = array_combine(range(1, count($socials)), array_values(array_keys($socials)));
-		$socials = shuffle_assoc($socials);
+		$keys = array_keys($socials);
+		shuffle($keys);
 	?>
 	<main class="site-content" role="main">
 		<section id="home-slider">
 			<div id="slider" class="sl-slider-wrapper">
-				<?php foreach ($socials as $name => $data) { ?>
+				<?php for ($i = 0; $i < count($socials); $i++) { $name = $keys[$i]; $data = $socials[$name]; ?>
 					<div class="sl-slider">
 						<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-							<div class="bg-img bg-img-<?php echo array_search($name, $order)?>"></div>
+							<div class="bg-img" style="background-image: url(img/slider/<?php echo $name; ?>.png);"></div>
 							<div class="slide-caption">
 								<div class="caption-content">
 									<div class="caption-box">
@@ -89,7 +81,6 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.singlePageNav.min.js"></script>
 	<script src="js/jquery.slitslider.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/jquery.ba-cond.min.js"></script>
 	<script src="js/main.js"></script>
 </body>
