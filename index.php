@@ -10,7 +10,6 @@
 	<meta name="keywords" content="music production, beats, mixing, mastering, music studio, portfolio, soundcloud, spotify, apple music, youtube, contact,social media, collaborations, projects, genre, tracks, artist, bio, testimonials, store, events">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/png" href="img/icons/logo.png" />
-	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/slit-slider.css">
 	<link rel="stylesheet" href="css/main.css">
