@@ -8,7 +8,9 @@ body {
     font-size: 16px;
     color: #818181;
 }
-
+.container {
+    /* width: 298px; */
+}
 .fa-3x {
     padding-top: 5px;
 }

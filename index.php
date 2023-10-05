@@ -1,12 +1,18 @@
+<?php
+	$data = json_decode(file_get_contents("data.json"), true);
+	$socials = $data['socials'];
+	$keys = array_keys($socials);
+	shuffle($keys);
+?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Samui Productions</title>
-	<meta name="description" content="Samui Productions">
-	<meta name="author" content="Samui Productions">
+	<title><?php echo $data['title'] ?></title>
+	<meta name="description" content="<?php echo $data['title'] ?>">
+	<meta name="author" content="<?php echo $data['title'] ?>">
 	<meta name="keywords" content="music production, beats, mixing, mastering, music studio, portfolio, soundcloud, spotify, apple music, youtube, contact,social media, collaborations, projects, genre, tracks, artist, bio, testimonials, store, events">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/png" href="img/icons/logo.png" />
@@ -18,7 +24,6 @@
 </head>
 
 <body id="body">
-
 	<header id="navigation" class="navbar-inverse navbar-fixed-top animated-header">
 		<div class="container">
 			<div class="navbar-header">
@@ -30,23 +35,18 @@
 				</button>
 				<div class="header-brand">
 					<img src="img/icons/logo.png" alt="logo" width="30" height="30" />
-					<h1 class="navbar-brand">Samui Productions</h1>
+					<h1 class="navbar-brand"><?php echo $data['title'] ?></h1>
 				</div>
 			</div>
-			<nav class="collapse navbar-collapse navbar-right" role="navigation">
+			<!-- <nav class="collapse navbar-collapse navbar-right" role="navigation">
 				<ul id="nav" class="nav navbar-nav">
 					<li><a href="#body">Home</a></li>
 					<li><a href="#price">Price</a></li>
 					<li><a href="#contact">Contact</a></li>
 				</ul>
-			</nav>
+			</nav> -->
 		</div>
 	</header>
-	<?php
-		$socials = json_decode(file_get_contents("socials.json"), true);
-		$keys = array_keys($socials);
-		shuffle($keys);
-	?>
 	<main class="site-content" role="main">
 		<section id="home-slider">
 			<div id="slider" class="sl-slider-wrapper">
@@ -83,5 +83,4 @@
 	<script src="js/jquery.ba-cond.min.js"></script>
 	<script src="js/main.js"></script>
 </body>
-
 </html>
